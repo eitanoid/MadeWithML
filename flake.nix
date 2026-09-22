@@ -17,6 +17,7 @@
             ]
           ))
           # Infra
+          just
           kind
           kubectl
           kubernetes-helm
