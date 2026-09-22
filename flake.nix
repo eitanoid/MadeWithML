@@ -9,30 +9,17 @@
     devShells = builtins.mapAttrs (system: pkgs: {
       default = pkgs.mkShellNoCC {
         packages = with pkgs; [
-          (python3.withPackages (
+          (python311.withPackages (
             ps: with ps; [
-
-              # Core ML & Distributed Computing
-              torch
-              ray
-              pandas
-              numpy
-              scikit-learn
-
-              # Data Validation & Testing
-              pytest
-
-              # what the tutorial says
               uv
               setuptools
               wheel
-
             ]
           ))
           # Infra
           kind
           kubectl
-          helm
+          kubernetes-helm
           skaffold
         ];
 
