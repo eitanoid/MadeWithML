@@ -19,4 +19,9 @@ install:
 
 # run the project notebook
 notebook:
+   source ./.env
    jupyter lab ./makewithml/notebooks/madewithml.ipynb
+
+# port-forward to kubernetes Ray deployment
+ray-port-forward:
+    kubectl port-forward service/raycluster-kuberay-head-svc 8265:8265 > /dev/null &
