@@ -1,20 +1,20 @@
 [Made with ml](https://madewithml.com/)
 
-Attempt at following MadeWithML with Kubernetes and UV
+Attempt at following the MadeWithML course but with Kubernetes instead of Local or Anyscale
 
 # Setup
 
-1. install dependancies
+1. Install dependancies
 ```sh
 nix develop
 ```
 
-2. install Python packages
+2. Install Python packages
 ```sh
-./dev/install-packages.sh
+just install
 ```
 
-3. bootstrap a Kind cluster
+3. Bootstrap a Kind cluster
 ```sh
-./dev/up.sh
+just up
 ```

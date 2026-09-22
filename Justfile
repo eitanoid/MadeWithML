@@ -11,6 +11,12 @@ down:
 clean: down
     rm -r .venv
 
-# install python packages
+# install python packages and dependancy repo
 install:
-    ./dev/install-packages.sh
+     if [[ ! -d .venv ]] ; then uv venv; fi
+     source .venv/bin/activate
+     ./dev/install-packages.sh
+
+# run the project notebook
+notebook:
+    ./makewithml/notebooks/madewithml.ipynb
