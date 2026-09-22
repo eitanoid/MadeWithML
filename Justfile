@@ -19,4 +19,4 @@ install:
 
 # run the project notebook
 notebook:
-    ./makewithml/notebooks/madewithml.ipynb
+   jupyter lab ./makewithml/notebooks/madewithml.ipynb

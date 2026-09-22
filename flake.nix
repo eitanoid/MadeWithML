@@ -11,20 +11,21 @@
         packages = with pkgs; [
           (python311.withPackages (
             ps: with ps; [
-              uv
-              setuptools
               wheel
             ]
           ))
+          uv
           # Infra
           just
           kind
           kubectl
           kubernetes-helm
           skaffold
+          stdenv.cc.cc.lib
         ];
 
         shellHook = ''
+          export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
           echo "----------------------------------------------------"
           echo "  MadeWithML Dev Environment Loaded!"
           echo "  Python: $(python --version)"
