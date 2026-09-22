@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-kind delete clusters kind-madewithml
+kind delete clusters madewithml
